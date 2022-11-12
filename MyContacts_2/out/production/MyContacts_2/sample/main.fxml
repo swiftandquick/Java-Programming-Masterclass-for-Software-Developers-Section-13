@@ -1,0 +1,74 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane fx:id="mainPanel" fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <!-- Above line, BorderPane has the FX ID of mainPanel.  -->
+    <top>
+        <!-- Create a menu bar.  -->
+        <MenuBar>
+            <menus>
+                <Menu text="Contacts">
+                    <items>
+                        <!-- Once the MenuItem with text "Add..." is clicked, invoke showAddContactDialog().  -->
+                        <MenuItem text="Add..." onAction="#showAddContactDialog"/>
+                    </items>
+                    <items>
+                        <!-- Once the MenuItem with text "Edit..." is clicked, invoke showEditContactDialog().  -->
+                        <MenuItem text="Edit..." onAction="#showEditContactDialog"/>
+                    </items>
+                    <items>
+                        <!-- Once the MenuItem with text "Delete" is clicked, invoke deleteContact().  -->
+                        <MenuItem text="Delete" onAction="#deleteContact"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <!-- TableView can visualize an unlimited number of rows of data, broken out into columns.  Assign FX ID
+        as "contactsTable".  -->
+        <TableView fx:id="contactsTable">
+            <columnResizePolicy>
+                <!-- Simple policy that ensures the width of all visible leaf columns in this table sum up to equal
+                the width of the table itself.  -->
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <!-- Inside the <columns> tag is where I create columns for the table.  -->
+            <columns>
+                <!-- Set the text of the table column as "First Name".  -->
+                <TableColumn text="First Name">
+                    <!-- The cell value factory needs to be set to specify how to populate all cells within a single
+                    TableColumn.  -->
+                    <cellValueFactory>
+                        <!-- A convenience implementation of the Callback interface.  Set property to firstName.
+                        property's value is share the same name as SimpleStringProperty variable firstName.  -->
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <!-- For lastName.  -->
+                <TableColumn text="Last Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <!-- For phoneNumber.  -->
+                <TableColumn text="Phone Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="phoneNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <!-- For notes.  -->
+                <TableColumn text="Notes">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="notes"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

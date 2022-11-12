@@ -1,0 +1,30 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          stylesheets="@styles.css" fx:id="gridPane">
+    <!-- Above line, import the style sheet called styles.css, the CSS file can be any name, mine is just styles.css.
+    Set the FX ID to gridPane.  -->
+
+    <!-- Click on the button will invoke the handleClick() method.  -->
+    <Button text="Open..." onAction="#handleClick" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Button text="Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <!-- Assign ID to Button as "button_three".  -->
+    <Button text="Button Three" id="button_three" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <!-- Button with the FX ID of "button4".  -->
+    <Button text="Button Four" fx:id="button4" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+    <Button text="Button Five" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+
+    <RadioButton text="Choice 1" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <!-- Label with the FX ID of "label".  Invoke handleMouseEnter() when mouse is hover over the node (label).
+    Invoke handleMouseExit() when mouse stop hover over the node (label).  Rotate the node (label) 90 degrees.  -->
+    <Label text="JavaFX Effects" fx:id="label" GridPane.rowIndex="1" GridPane.columnIndex="1"
+    rotate="90" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit"/>
+
+    <!-- Create a Hyperlink node.  If click on it, invoke the the handleLinkClick() method.  -->
+    <Hyperlink text="wwww.javafx.com" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#handleLinkClick"/>
+
+</GridPane>

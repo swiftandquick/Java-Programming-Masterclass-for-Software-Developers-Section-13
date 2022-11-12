@@ -1,0 +1,18 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<!-- GridPane layout is the root element of the FXML document.  -->
+<!-- sample.Controller:  sample is the package that Controller is in.  Controller is the controller class.  -->
+<?import javafx.scene.text.Font?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <!-- GridPane is the parent, so everything that's inside the GridPane tags will be visible in the application.  -->
+    <Label text="Welcome to Java FX!  " textFill = "green">
+        <font>
+            <Font name="Times New Roman bold" size="70"/>
+        </font>
+    </Label>
+</GridPane>

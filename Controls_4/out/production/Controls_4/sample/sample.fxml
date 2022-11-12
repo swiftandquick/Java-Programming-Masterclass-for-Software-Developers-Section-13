@@ -1,0 +1,149 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Accordion?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Click Me">
+        <graphic>
+            <ImageView>
+                <!-- The image of the button is from toolbarButtonGraphics folder's general folder's TipOfTheDay24.gif.  -->
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <!-- Create a blue colored label.  -->
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1"
+           text="This is a label, this is a label, this is a label!  " textFill="blue">
+        <!-- Set the font of the label.  -->
+        <font>
+            <Font name="Arial italic" size="12"/>
+        </font>
+        <graphic>
+            <ImageView>
+                <!-- Add image to label.  -->
+                <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
+            </ImageView>
+        </graphic>
+    </Label>
+
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="2">
+        <!-- Add 3 radio buttons.  Set them to the same toggle group, so only one radio button of the group can be clicked
+        at the time.  -->
+        <RadioButton text="Red" toggleGroup="$colorToggleGroup"/>
+        <!-- The second radion button is the default selected button.  -->
+        <RadioButton text="Blue" toggleGroup="$colorToggleGroup"
+                 selected="true"/>
+        <RadioButton text="Green" toggleGroup="$colorToggleGroup"/>
+    </VBox>
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="3">
+        <!-- Create a checkbox, add the interdemine or undefined state.  -->
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
+
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="4">
+        <!-- Create a button that I can toggle.  -->
+        <ToggleButton text="Toggle Me"/>
+        <ToggleButton text="Hello"/>
+        <ToggleButton text="Goodbye"/>
+    </HBox>
+
+    <!-- I can type input in text field.  -->
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <!-- I can type non-viewable input in password field.  -->
+    <PasswordField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Create a combo box that spans three columns.  -->
+    <ComboBox GridPane.rowIndex="1" GridPane.columnIndex="2" GridPane.columnSpan="2" editable="true">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <!-- Add String type options.  -->
+                <String fx:value="This is Option 1.  "/>
+                <String fx:value="This is Option 2.  "/>
+                <String fx:value="This is Option 3.  "/>
+                <String fx:value="This is Option 4.  "/>
+                <String fx:value="This is Option 5.  "/>
+            </FXCollections>
+        </items>
+        <value>
+            <!-- Set the default option as "This is Option 4.  " -->
+            <String fx:value="This is Option 4.  "/>
+        </value>
+    </ComboBox>
+
+    <ChoiceBox GridPane.rowIndex="1" GridPane.columnIndex="4">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="cb 1"/>
+                <String fx:value="cb 2"/>
+                <String fx:value="cb 3"/>
+                <String fx:value="cb 4"/>
+                <String fx:value="cb 5"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <!-- Create a slider that has value goes from 0 to 100.  The slider has tick labels and tick marks, each tick has
+    the value of 4 apart from each other.  Indicates that the value of the Slider should always be aligned with the
+    tick marks.  -->
+    <Slider GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="4" min="0" max="100"
+            showTickLabels="true" showTickMarks="true" minorTickCount="4" snapToTicks="true"/>
+
+    <!-- Create a spinner range from 0 and 100, set editable to true so I can edit the spinner value.  If I set the
+    value < 0, the value will set to 0.  If I set the value > 100, the value will set to 100.  The initial value is
+    50.  -->
+    <Spinner GridPane.rowIndex="2" GridPane.columnIndex="4" min="0" max="100" editable="true" initialValue="50"/>
+
+    <!-- Create a color picker.  -->
+    <ColorPicker GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+
+    <!-- Create a date picker.  -->
+    <DatePicker GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Create a group of panels that only one can be opened.  -->
+    <Accordion GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.columnSpan="2">
+        <panes>
+            <!-- Create a panel that can be open or closed.  The panel contains a label.  -->
+            <TitledPane text="Titled Pane">
+                <Label text="Label in the titled pane.  "/>
+            </TitledPane>
+            <TitledPane text="Titled Pane 2">
+                <Label text="Label 2 in the titled pane.  "/>
+            </TitledPane>
+            <TitledPane text="Titled Pane 3">
+                <Label text="Label 3 in the titled pane.  "/>
+            </TitledPane>
+        </panes>
+    </Accordion>
+
+</GridPane>

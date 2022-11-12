@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Controls_4/Controls_4.iml" filepath="$PROJECT_DIR$/Controls_4/Controls_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Events/Events.iml" filepath="$PROJECT_DIR$/Events/Events.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldFX/HelloWorldFX.iml" filepath="$PROJECT_DIR$/HelloWorldFX/HelloWorldFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Programming Masterclass for Software Developers Section 13.iml" filepath="$PROJECT_DIR$/Java Programming Masterclass for Software Developers Section 13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Layouts/Layouts.iml" filepath="$PROJECT_DIR$/Layouts/Layouts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SceneBuilder/SceneBuilder.iml" filepath="$PROJECT_DIR$/SceneBuilder/SceneBuilder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TodoList/TodoList.iml" filepath="$PROJECT_DIR$/TodoList/TodoList.iml" />
+    </modules>
+  </component>
+</project>

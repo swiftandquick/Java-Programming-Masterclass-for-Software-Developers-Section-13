@@ -1,0 +1,32 @@
+<!-- A layout for the dialog.  -->
+
+<?import javafx.scene.control.DialogPane?>
+<!-- Create dialog pane as the main layout for the dialog, DialogController class controls how the user can interact
+with elements inside this DialogPane.  -->
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<DialogPane fx:controller="com.cheny16.todolist.DialogController"
+            xmlns:fx="htp://javafx.com/fxml">
+    <!-- Create a header text, which is similar to a label.  -->
+    <headerText>
+        We could put instructions here.
+    </headerText>
+    <!-- Create a content section where I add contents in for DialogPane.  -->
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <!-- Allows user to enter short description, details, and deadline.  -->
+            <Label text="Short Description:  " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="shortDescriptionField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label  text="Details:  " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <!-- Create a text area, it’s like a text field, but it’s more than 1 line.  Makes the text area be able to
+            wrap the text, so if there isn’t enough space, the text will skip to the next line.  -->
+            <TextArea fx:id="detailsArea" GridPane.rowIndex="1" GridPane.columnIndex="1" wrapText="true"/>
+            <Label text="Deadline:  " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <!-- Create a date picker where I can choose a date.  -->
+            <DatePicker fx:id="deadlinePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+</DialogPane>

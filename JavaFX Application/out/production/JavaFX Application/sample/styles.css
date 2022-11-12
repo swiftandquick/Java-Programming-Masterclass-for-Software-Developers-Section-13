@@ -1,0 +1,6 @@
+/* #button_three is the selector.  Style element with the ID button_three.
+-fx-background-color is the attribute.  blue is the value.  */
+#button_three {
+    -fx-background-color:blue;
+    -fx-text-fill:white;
+}
